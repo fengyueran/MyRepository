@@ -109,12 +109,9 @@
 			children = (
 				8208F6EE1D9A34CC009E9358 /* AppDelegate.h */,
 				8208F6EF1D9A34CC009E9358 /* AppDelegate.m */,
-				8208F6F11D9A34CC009E9358 /* ViewController.h */,
-				8208F6F21D9A34CC009E9358 /* ViewController.m */,
-				8208F71E1D9A3575009E9358 /* Album.h */,
-				8208F71F1D9A3575009E9358 /* Album.m */,
-				8208F7211D9A3686009E9358 /* AlbumView.h */,
-				8208F7221D9A3686009E9358 /* AlbumView.m */,
+				8208F7261D9A3856009E9358 /* Controller */,
+				8208F7251D9A3841009E9358 /* View */,
+				8208F7241D9A381E009E9358 /* Model */,
 				8208F6F41D9A34CC009E9358 /* Main.storyboard */,
 				8208F6F71D9A34CC009E9358 /* Assets.xcassets */,
 				8208F6F91D9A34CC009E9358 /* LaunchScreen.storyboard */,
@@ -148,6 +145,33 @@
 				8208F7121D9A34CC009E9358 /* Info.plist */,
 			);
 			path = "IOS-Design-PatternsUITests";
+			sourceTree = "<group>";
+		};
+		8208F7241D9A381E009E9358 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8208F71E1D9A3575009E9358 /* Album.h */,
+				8208F71F1D9A3575009E9358 /* Album.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8208F7251D9A3841009E9358 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8208F7211D9A3686009E9358 /* AlbumView.h */,
+				8208F7221D9A3686009E9358 /* AlbumView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8208F7261D9A3856009E9358 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8208F6F11D9A34CC009E9358 /* ViewController.h */,
+				8208F6F21D9A34CC009E9358 /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
