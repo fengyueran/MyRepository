@@ -15,6 +15,7 @@
 		8208F6FB1D9A34CC009E9358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8208F6F91D9A34CC009E9358 /* LaunchScreen.storyboard */; };
 		8208F7061D9A34CC009E9358 /* IOS_Design_PatternsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F7051D9A34CC009E9358 /* IOS_Design_PatternsTests.m */; };
 		8208F7111D9A34CC009E9358 /* IOS_Design_PatternsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F7101D9A34CC009E9358 /* IOS_Design_PatternsUITests.m */; };
+		8208F7201D9A3575009E9358 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F71F1D9A3575009E9358 /* Album.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8208F70C1D9A34CC009E9358 /* IOS-Design-PatternsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-Design-PatternsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8208F7101D9A34CC009E9358 /* IOS_Design_PatternsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOS_Design_PatternsUITests.m; sourceTree = "<group>"; };
 		8208F7121D9A34CC009E9358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8208F71E1D9A3575009E9358 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		8208F71F1D9A3575009E9358 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				8208F6EF1D9A34CC009E9358 /* AppDelegate.m */,
 				8208F6F11D9A34CC009E9358 /* ViewController.h */,
 				8208F6F21D9A34CC009E9358 /* ViewController.m */,
+				8208F71E1D9A3575009E9358 /* Album.h */,
+				8208F71F1D9A3575009E9358 /* Album.m */,
 				8208F6F41D9A34CC009E9358 /* Main.storyboard */,
 				8208F6F71D9A34CC009E9358 /* Assets.xcassets */,
 				8208F6F91D9A34CC009E9358 /* LaunchScreen.storyboard */,
@@ -273,6 +278,7 @@
 				8208F6F31D9A34CC009E9358 /* ViewController.m in Sources */,
 				8208F6F01D9A34CC009E9358 /* AppDelegate.m in Sources */,
 				8208F6ED1D9A34CC009E9358 /* main.m in Sources */,
+				8208F7201D9A3575009E9358 /* Album.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
