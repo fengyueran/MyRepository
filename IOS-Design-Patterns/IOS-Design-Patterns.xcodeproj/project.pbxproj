@@ -18,6 +18,7 @@
 		8208F7201D9A3575009E9358 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F71F1D9A3575009E9358 /* Album.m */; };
 		8208F7231D9A3686009E9358 /* AlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F7221D9A3686009E9358 /* AlbumView.m */; };
 		8208F7291D9A3921009E9358 /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F7281D9A3921009E9358 /* LibraryAPI.m */; };
+		8208F72C1D9A3DD2009E9358 /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		8208F7221D9A3686009E9358 /* AlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumView.m; sourceTree = "<group>"; };
 		8208F7271D9A3921009E9358 /* LibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LibraryAPI.h; path = ../LibraryAPI.h; sourceTree = "<group>"; };
 		8208F7281D9A3921009E9358 /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LibraryAPI.m; path = ../LibraryAPI.m; sourceTree = "<group>"; };
+		8208F72A1D9A3DD2009E9358 /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				8208F6EF1D9A34CC009E9358 /* AppDelegate.m */,
 				8208F7271D9A3921009E9358 /* LibraryAPI.h */,
 				8208F7281D9A3921009E9358 /* LibraryAPI.m */,
+				8208F72A1D9A3DD2009E9358 /* PersistencyManager.h */,
+				8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */,
 				8208F7261D9A3856009E9358 /* Controller */,
 				8208F7251D9A3841009E9358 /* View */,
 				8208F7241D9A381E009E9358 /* Model */,
@@ -315,6 +320,7 @@
 				8208F6F01D9A34CC009E9358 /* AppDelegate.m in Sources */,
 				8208F6ED1D9A34CC009E9358 /* main.m in Sources */,
 				8208F7201D9A3575009E9358 /* Album.m in Sources */,
+				8208F72C1D9A3DD2009E9358 /* PersistencyManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
