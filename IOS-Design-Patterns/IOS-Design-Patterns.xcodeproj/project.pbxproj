@@ -20,6 +20,7 @@
 		8208F72C1D9A3DD2009E9358 /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */; };
 		8208F7301D9A644E009E9358 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F72F1D9A644E009E9358 /* HTTPClient.m */; };
 		8240D70D1D9BC8D7007B2739 /* Album+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240D70C1D9BC8D7007B2739 /* Album+TableRepresentation.m */; };
+		824252741D9CB2F900C7CB6F /* HorizontalScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 824252731D9CB2F900C7CB6F /* HorizontalScroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		8208F72F1D9A644E009E9358 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		8240D70B1D9BC8D7007B2739 /* Album+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+TableRepresentation.h"; sourceTree = "<group>"; };
 		8240D70C1D9BC8D7007B2739 /* Album+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+TableRepresentation.m"; sourceTree = "<group>"; };
+		824252721D9CB2F900C7CB6F /* HorizontalScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScroller.h; sourceTree = "<group>"; };
+		824252731D9CB2F900C7CB6F /* HorizontalScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				8208F72F1D9A644E009E9358 /* HTTPClient.m */,
 				8208F72A1D9A3DD2009E9358 /* PersistencyManager.h */,
 				8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */,
+				824252721D9CB2F900C7CB6F /* HorizontalScroller.h */,
+				824252731D9CB2F900C7CB6F /* HorizontalScroller.m */,
 				8240D70E1D9BCB6C007B2739 /* Decorator */,
 				8208F7351D9A85ED009E9358 /* Facade */,
 				8208F7261D9A3856009E9358 /* Controller */,
@@ -341,6 +346,7 @@
 				8208F7231D9A3686009E9358 /* AlbumView.m in Sources */,
 				8208F6F01D9A34CC009E9358 /* AppDelegate.m in Sources */,
 				8208F6ED1D9A34CC009E9358 /* main.m in Sources */,
+				824252741D9CB2F900C7CB6F /* HorizontalScroller.m in Sources */,
 				8208F7201D9A3575009E9358 /* Album.m in Sources */,
 				8240D70D1D9BC8D7007B2739 /* Album+TableRepresentation.m in Sources */,
 				8208F7301D9A644E009E9358 /* HTTPClient.m in Sources */,
