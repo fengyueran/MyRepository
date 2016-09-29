@@ -8,6 +8,7 @@
 
 #import "PersistencyManager.h"
 #import "Album.h"
+#import <UIKit/UIKit.h>
 
 @interface PersistencyManager()
 {
@@ -34,6 +35,11 @@
     return albums;
 }
 
+- (void)saveImage:(UIImage*)image filename:(NSString*)filename {
+    filename = [NSHomeDirectory() stringByAppendingFormat:@"/Document/%@",filename];
+    NSData *data = UIImagePNGRepresentation(image);
+    [data writeToFile:filename atomically:YES];
+}
 - (void)addAlbum:(Album *)album atIndex:(int)index {
     if (albums.count >= index) {
         [albums insertObject:album atIndex:index];
@@ -42,6 +48,11 @@
     }
 }
 
+- (UIImage *)getImage:(NSString *)filename {
+    filename = [NSHomeDirectory() stringByAppendingFormat:@"/Document/%@",filename];
+    NSData *data = [NSData dataWithContentsOfFile:filename];
+    return [UIImage imageWithData:data];
+}
 - (void)deleteAlbumAtIndex:(int)index {
     [albums removeObjectAtIndex:index];
 }

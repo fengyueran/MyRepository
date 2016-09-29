@@ -1,5 +1,5 @@
 //
-//  PersistencyManager.h
+//  LibraryAPI.h
 //  IOS-Design-Patterns
 //
 //  Created by intern08 on 9/27/16.
@@ -8,13 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Album.h"
-#import <UIKit/UIKit.h>
 
-@interface PersistencyManager : NSObject
-
+@interface LibraryAPI : NSObject
++ (LibraryAPI *)sharedInstance;
 - (NSArray *)getAlbums;
 - (void)addAlbum:(Album *)album atIndex:(int)index;
 - (void)deleteAlbumAtIndex:(int)index;
-- (void)saveImage:(UIImage*)image filename:(NSString*)filename;
-- (UIImage *)getImage:(NSString *)filename;
 @end

@@ -126,8 +126,7 @@
 				8208F72F1D9A644E009E9358 /* HTTPClient.m */,
 				8208F72A1D9A3DD2009E9358 /* PersistencyManager.h */,
 				8208F72B1D9A3DD2009E9358 /* PersistencyManager.m */,
-				824252721D9CB2F900C7CB6F /* HorizontalScroller.h */,
-				824252731D9CB2F900C7CB6F /* HorizontalScroller.m */,
+				824253B61D9D1D9200C7CB6F /* Adapter */,
 				8240D70E1D9BCB6C007B2739 /* Decorator */,
 				8208F7351D9A85ED009E9358 /* Facade */,
 				8208F7261D9A3856009E9358 /* Controller */,
@@ -210,6 +209,15 @@
 				8240D70C1D9BC8D7007B2739 /* Album+TableRepresentation.m */,
 			);
 			name = Decorator;
+			sourceTree = "<group>";
+		};
+		824253B61D9D1D9200C7CB6F /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				824252721D9CB2F900C7CB6F /* HorizontalScroller.h */,
+				824252731D9CB2F900C7CB6F /* HorizontalScroller.m */,
+			);
+			name = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
