@@ -18,7 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor blackColor];
         coverImage = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, frame.size.width-10, frame.size.height-10)];
         [self addSubview:coverImage];
         

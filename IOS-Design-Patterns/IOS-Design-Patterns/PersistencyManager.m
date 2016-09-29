@@ -22,9 +22,9 @@
        
         albums = [NSMutableArray arrayWithArray:
                   @[[[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
+                    [[Album alloc]initWithTitle:@"Best of jay" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                    [[Album alloc]initWithTitle:@"Best of snow" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                    [[Album alloc]initWithTitle:@"Best of tina" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
         
     }
     return self;
