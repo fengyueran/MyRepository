@@ -76,16 +76,29 @@
     currentAlbumIndex = index;
     [self showDataForAlbumAtIndex:index];
 }
+
+
+- (NSInteger)numberOfViewsForHorizontalScroller:(HorizontalScroller*)scroller
+{
+    return allAlbums.count;
+}
+
+- (UIView*)horizontalScroller:(HorizontalScroller*)scroller viewAtIndex:(int)index
+{
+    Album *album = allAlbums[index];
+    return [[AlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) albumCover:album.coverUrl];
+}
+
+- (NSInteger)initialViewIndexForHorizontalScroller:(HorizontalScroller *)scroller
+{
+    return currentAlbumIndex;
+}
+
 - (void)addAlbum:(Album*)album atIndex:(int)index
 {
     [[LibraryAPI sharedInstance] addAlbum:album atIndex:index];
     currentAlbumIndex = index;
     [self reloadScroller];
-}
-
-- (NSInteger)numberOfViewsForHorizontalScroller:(HorizontalScroller*)scroller
-{
-    return allAlbums.count;
 }
 
 - (void)deleteAlbum
@@ -128,11 +141,6 @@
     }
 }
 
-- (UIView*)horizontalScroller:(HorizontalScroller*)scroller viewAtIndex:(int)index
-{
-    Album *album = allAlbums[index];
-    return [[AlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) albumCover:album.coverUrl];
-}
 
 - (void)reloadScroller {
     allAlbums = [[LibraryAPI sharedInstance] getAlbums];
@@ -143,12 +151,10 @@
     
 }
 
-- (NSInteger)initialViewIndexForHorizontalScroller:(HorizontalScroller *)scroller
-{
-    return currentAlbumIndex;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"====%lu",[currentAlbumData[@"titles"] count]);
     return [currentAlbumData[@"titles"] count];
 }
 
@@ -156,9 +162,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    }
         cell.textLabel.text = currentAlbumData[@"titles"][indexPath.row];
         cell.detailTextLabel.text = currentAlbumData[@"values"][indexPath.row];
-    }
+    
     return cell;
 }
 - (void)showDataForAlbumAtIndex:(int)albumIndex {

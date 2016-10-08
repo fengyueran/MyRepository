@@ -24,10 +24,10 @@
         albums = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (albums==nil) {
             albums = [NSMutableArray arrayWithArray:
-                      @[[[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                        [[Album alloc]initWithTitle:@"Best of jay" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                        [[Album alloc]initWithTitle:@"Best of snow" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                        [[Album alloc]initWithTitle:@"Best of tina" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
+                      @[[[Album alloc]initWithTitle:@"Best of Bowie" artist:@"aaaaa"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of jay" artist:@"bbbbb"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of snow" artist:@"ccccc"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of tina" artist:@"ddddd"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
             [self saveAlbums];
         }
         
