@@ -20,12 +20,16 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-       
-        albums = [NSMutableArray arrayWithArray:
-                  @[[[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of jay" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of snow" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
-                    [[Album alloc]initWithTitle:@"Best of tina" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
+        NSData *data = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingString:@"/Documents/albums.bin"]];
+        albums = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        if (albums==nil) {
+            albums = [NSMutableArray arrayWithArray:
+                      @[[[Album alloc]initWithTitle:@"Best of Bowie" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of jay" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of snow" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"],
+                        [[Album alloc]initWithTitle:@"Best of tina" artist:@"David Bowie"  coverUrl:@"http://www.raywenderlich.com/wp-content/uploads/2013/07/facade.jpg" year:@"1992"]]];
+            [self saveAlbums];
+        }
         
     }
     return self;
@@ -55,6 +59,12 @@
 }
 - (void)deleteAlbumAtIndex:(int)index {
     [albums removeObjectAtIndex:index];
+}
+
+- (void)saveAlbums {
+    NSString *filename = [NSHomeDirectory() stringByAppendingString:@"/Documents/albums.bin"];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:albums];
+    [data writeToFile:filename atomically:YES];
 }
 
 @end

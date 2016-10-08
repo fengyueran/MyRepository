@@ -29,26 +29,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];;
-    currentAlbumIndex = 0;
+    currentAlbumIndex = 2;
     allAlbums = [[LibraryAPI sharedInstance] getAlbums];
     // the uitableview that presents the album data
     dataTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
     dataTable.delegate = self;
     dataTable.dataSource = self;
     dataTable.backgroundView = nil;
-
     [self.view addSubview:dataTable];
-   [self showDataForAlbumAtIndex:currentAlbumIndex];
-    
     [self loadPreviousState];
+    
     scroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 120)];
     
     scroller.backgroundColor = [UIColor colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
     scroller.delegate = self;
-   [self.view addSubview:scroller];
+    [self.view addSubview:scroller];
+   [self showDataForAlbumAtIndex:currentAlbumIndex];
+    
+    
+   
  
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     //[self reloadScroller];
+    
+    
 }
 
 #pragma mark - HorizontalScrollerDelegate methods
@@ -108,6 +112,7 @@
 
 - (void)saveCurrentState {
     [[NSUserDefaults standardUserDefaults] setInteger:currentAlbumIndex forKey:@"currentAlbumIndex"];
+    [[LibraryAPI sharedInstance] saveAlbums];
 }
 
 - (void)loadPreviousState {

@@ -81,4 +81,9 @@
         [httpClient postRequest:@"/api/deleteAlbum" body:[@(index) description]];
     }
 }
+
+- (void)saveAlbums
+{
+    [persistencyManager saveAlbums];
+}
 @end
