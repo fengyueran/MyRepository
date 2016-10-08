@@ -40,13 +40,14 @@
     [self.view addSubview:dataTable];
    [self showDataForAlbumAtIndex:currentAlbumIndex];
     
+    [self loadPreviousState];
     scroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 120)];
     
     scroller.backgroundColor = [UIColor colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
     scroller.delegate = self;
    [self.view addSubview:scroller];
  
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     //[self reloadScroller];
 }
 
@@ -105,7 +106,20 @@
     [dataTable reloadData];
 }
 
+- (void)saveCurrentState {
+    [[NSUserDefaults standardUserDefaults] setInteger:currentAlbumIndex forKey:@"currentAlbumIndex"];
+}
 
+- (void)loadPreviousState {
+    currentAlbumIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentAlbumIndex"];
+     [self showDataForAlbumAtIndex:currentAlbumIndex];
+    
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
