@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="787" y="1094"/>
         </scene>
-        <!--View Controller-->
+        <!--Pthread Load View Controller-->
         <scene sceneID="iPA-mQ-oBn">
             <objects>
-                <viewController id="qYF-j6-oNa" sceneMemberID="viewController">
+                <viewController id="qYF-j6-oNa" customClass="PthreadLoadViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lKe-nH-Zoq"/>
                         <viewControllerLayoutGuide type="bottom" id="t1l-LJ-hBN"/>
@@ -187,14 +187,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-jp-UwG">
-                                <rect key="frame" x="40" y="121" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-xX-JYu">
                                 <rect key="frame" x="35" y="287" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="pthread"/>
+                                <connections>
+                                    <action selector="load:" destination="qYF-j6-oNa" eventType="touchUpInside" id="ofo-ya-rCe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
