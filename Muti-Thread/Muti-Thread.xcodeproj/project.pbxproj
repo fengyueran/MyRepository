@@ -16,6 +16,7 @@
 		8243434E1DAA170300E841FD /* Muti_ThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8243434D1DAA170300E841FD /* Muti_ThreadTests.m */; };
 		824343591DAA170300E841FD /* Muti_ThreadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824343581DAA170300E841FD /* Muti_ThreadUITests.m */; };
 		8246FF6D1DAA20DD0032EDC2 /* PthreadLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF6C1DAA20DD0032EDC2 /* PthreadLoadViewController.m */; };
+		8246FF711DAA26AB0032EDC2 /* NSThreadLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		8243435A1DAA170300E841FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8246FF6B1DAA20DD0032EDC2 /* PthreadLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PthreadLoadViewController.h; sourceTree = "<group>"; };
 		8246FF6C1DAA20DD0032EDC2 /* PthreadLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PthreadLoadViewController.m; sourceTree = "<group>"; };
+		8246FF6F1DAA26AB0032EDC2 /* NSThreadLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThreadLoadViewController.h; sourceTree = "<group>"; };
+		8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSThreadLoadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 				824343371DAA170300E841FD /* AppDelegate.m */,
 				824343391DAA170300E841FD /* ViewController.h */,
 				8243433A1DAA170300E841FD /* ViewController.m */,
+				8246FF6E1DAA267E0032EDC2 /* NSTread Load */,
 				8246FF6A1DAA20B40032EDC2 /* Pthread */,
 				8243433C1DAA170300E841FD /* Main.storyboard */,
 				8243433F1DAA170300E841FD /* Assets.xcassets */,
@@ -151,6 +155,15 @@
 				8246FF6C1DAA20DD0032EDC2 /* PthreadLoadViewController.m */,
 			);
 			name = Pthread;
+			sourceTree = "<group>";
+		};
+		8246FF6E1DAA267E0032EDC2 /* NSTread Load */ = {
+			isa = PBXGroup;
+			children = (
+				8246FF6F1DAA26AB0032EDC2 /* NSThreadLoadViewController.h */,
+				8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */,
+			);
+			name = "NSTread Load";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +299,7 @@
 				8243433B1DAA170300E841FD /* ViewController.m in Sources */,
 				8246FF6D1DAA20DD0032EDC2 /* PthreadLoadViewController.m in Sources */,
 				824343381DAA170300E841FD /* AppDelegate.m in Sources */,
+				8246FF711DAA26AB0032EDC2 /* NSThreadLoadViewController.m in Sources */,
 				824343351DAA170300E841FD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

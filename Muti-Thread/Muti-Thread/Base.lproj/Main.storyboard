@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="-23" y="308"/>
         </scene>
-        <!--View Controller-->
+        <!--Thread Load View Controller-->
         <scene sceneID="0HP-uF-8c5">
             <objects>
-                <viewController id="iUl-Wj-biH" sceneMemberID="viewController">
+                <viewController id="iUl-Wj-biH" customClass="NSThreadLoadViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5NR-Ay-tYS"/>
                         <viewControllerLayoutGuide type="bottom" id="dLv-Yl-mD8"/>
@@ -49,26 +49,45 @@
                                 <rect key="frame" x="40" y="81" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFv-yl-EM3">
-                                <rect key="frame" x="35" y="237" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="dynamicCreateThread"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6h-7H-aid">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6h-7H-aid">
                                 <rect key="frame" x="35" y="309" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="staticCreateThread"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="iUl-Wj-biH" eventType="touchUpInside" id="RQU-pe-Cfb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-fG-dLT">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-fG-dLT">
                                 <rect key="frame" x="35" y="381" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="implicitCreateThread"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="iUl-Wj-biH" eventType="touchUpInside" id="1Bw-69-IkG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加载中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guo-KU-6K2">
+                                <rect key="frame" x="130" y="134" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFv-yl-EM3">
+                                <rect key="frame" x="35" y="237" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="dynamicCreateThread"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="iUl-Wj-biH" eventType="touchUpInside" id="P00-2h-zbB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aI9-aW-HZF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="EIu-2U-NRV" id="dPZ-eY-rF9"/>
+                        <outlet property="loadingLb" destination="guo-KU-6K2" id="gGO-5x-YqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAo-mi-u9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
