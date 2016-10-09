@@ -17,6 +17,10 @@
 		824343591DAA170300E841FD /* Muti_ThreadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824343581DAA170300E841FD /* Muti_ThreadUITests.m */; };
 		8246FF6D1DAA20DD0032EDC2 /* PthreadLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF6C1DAA20DD0032EDC2 /* PthreadLoadViewController.m */; };
 		8246FF711DAA26AB0032EDC2 /* NSThreadLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */; };
+		8246FF751DAA307D0032EDC2 /* NSOperationLoadviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF741DAA307D0032EDC2 /* NSOperationLoadviewController.m */; };
+		8246FF781DAA382D0032EDC2 /* LoadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF771DAA382D0032EDC2 /* LoadImageOperation.m */; };
+		8246FF7C1DAA3DA10032EDC2 /* GCDLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF7B1DAA3DA10032EDC2 /* GCDLoadViewController.m */; };
+		8246FF801DAA40730032EDC2 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8246FF7F1DAA40730032EDC2 /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,14 @@
 		8246FF6C1DAA20DD0032EDC2 /* PthreadLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PthreadLoadViewController.m; sourceTree = "<group>"; };
 		8246FF6F1DAA26AB0032EDC2 /* NSThreadLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThreadLoadViewController.h; sourceTree = "<group>"; };
 		8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSThreadLoadViewController.m; sourceTree = "<group>"; };
+		8246FF731DAA307D0032EDC2 /* NSOperationLoadviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationLoadviewController.h; sourceTree = "<group>"; };
+		8246FF741DAA307D0032EDC2 /* NSOperationLoadviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationLoadviewController.m; sourceTree = "<group>"; };
+		8246FF761DAA382D0032EDC2 /* LoadImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadImageOperation.h; sourceTree = "<group>"; };
+		8246FF771DAA382D0032EDC2 /* LoadImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadImageOperation.m; sourceTree = "<group>"; };
+		8246FF7A1DAA3DA10032EDC2 /* GCDLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDLoadViewController.h; sourceTree = "<group>"; };
+		8246FF7B1DAA3DA10032EDC2 /* GCDLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDLoadViewController.m; sourceTree = "<group>"; };
+		8246FF7E1DAA40730032EDC2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		8246FF7F1DAA40730032EDC2 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,9 @@
 				824343371DAA170300E841FD /* AppDelegate.m */,
 				824343391DAA170300E841FD /* ViewController.h */,
 				8243433A1DAA170300E841FD /* ViewController.m */,
+				8246FF791DAA3D6E0032EDC2 /* GCD Load */,
+				8246FF7D1DAA40730032EDC2 /* Toast */,
+				8246FF721DAA304B0032EDC2 /* NSOperation */,
 				8246FF6E1DAA267E0032EDC2 /* NSTread Load */,
 				8246FF6A1DAA20B40032EDC2 /* Pthread */,
 				8243433C1DAA170300E841FD /* Main.storyboard */,
@@ -164,6 +179,35 @@
 				8246FF701DAA26AB0032EDC2 /* NSThreadLoadViewController.m */,
 			);
 			name = "NSTread Load";
+			sourceTree = "<group>";
+		};
+		8246FF721DAA304B0032EDC2 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				8246FF731DAA307D0032EDC2 /* NSOperationLoadviewController.h */,
+				8246FF741DAA307D0032EDC2 /* NSOperationLoadviewController.m */,
+				8246FF761DAA382D0032EDC2 /* LoadImageOperation.h */,
+				8246FF771DAA382D0032EDC2 /* LoadImageOperation.m */,
+			);
+			name = NSOperation;
+			sourceTree = "<group>";
+		};
+		8246FF791DAA3D6E0032EDC2 /* GCD Load */ = {
+			isa = PBXGroup;
+			children = (
+				8246FF7A1DAA3DA10032EDC2 /* GCDLoadViewController.h */,
+				8246FF7B1DAA3DA10032EDC2 /* GCDLoadViewController.m */,
+			);
+			name = "GCD Load";
+			sourceTree = "<group>";
+		};
+		8246FF7D1DAA40730032EDC2 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				8246FF7E1DAA40730032EDC2 /* UIView+Toast.h */,
+				8246FF7F1DAA40730032EDC2 /* UIView+Toast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,11 +340,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8246FF801DAA40730032EDC2 /* UIView+Toast.m in Sources */,
+				8246FF781DAA382D0032EDC2 /* LoadImageOperation.m in Sources */,
 				8243433B1DAA170300E841FD /* ViewController.m in Sources */,
+				8246FF751DAA307D0032EDC2 /* NSOperationLoadviewController.m in Sources */,
 				8246FF6D1DAA20DD0032EDC2 /* PthreadLoadViewController.m in Sources */,
 				824343381DAA170300E841FD /* AppDelegate.m in Sources */,
 				8246FF711DAA26AB0032EDC2 /* NSThreadLoadViewController.m in Sources */,
 				824343351DAA170300E841FD /* main.m in Sources */,
+				8246FF7C1DAA3DA10032EDC2 /* GCDLoadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

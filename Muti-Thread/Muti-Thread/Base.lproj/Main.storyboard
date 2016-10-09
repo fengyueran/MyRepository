@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="787" y="415"/>
         </scene>
-        <!--View Controller-->
+        <!--Load View Controller-->
         <scene sceneID="vh4-ED-7GH">
             <objects>
-                <viewController id="lMT-DW-bbo" sceneMemberID="viewController">
+                <viewController id="lMT-DW-bbo" customClass="GCDLoadViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oNd-ok-0eE"/>
                         <viewControllerLayoutGuide type="bottom" id="WwM-Xm-3Jr"/>
@@ -109,54 +109,99 @@
                                 <rect key="frame" x="35" y="90" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加载中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLB-yd-zjZ">
+                                <rect key="frame" x="132" y="143" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYy-rc-taT">
                                 <rect key="frame" x="35" y="226" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp3-A9-5Ik">
-                                <rect key="frame" x="8" y="367" width="135" height="50"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp3-A9-5Ik">
+                                <rect key="frame" x="8" y="367" width="135" height="39"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="global_queue"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="Pxl-GE-Wgo"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-ex-3J7">
-                                <rect key="frame" x="175" y="367" width="135" height="50"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-ex-3J7">
+                                <rect key="frame" x="175" y="367" width="135" height="39"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="main_queue"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="EWZ-ir-cRx"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-nA-WoY">
-                                <rect key="frame" x="8" y="431" width="135" height="50"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-nA-WoY">
+                                <rect key="frame" x="8" y="415" width="135" height="39"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="dispatch_once"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="naP-mw-8Yk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-V4-fpI">
-                                <rect key="frame" x="8" y="494" width="135" height="50"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="global_queue 2"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6l-Jq-YaS">
-                                <rect key="frame" x="175" y="431" width="135" height="50"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="dispatch_apply"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRy-Uz-ROx">
-                                <rect key="frame" x="175" y="494" width="135" height="50"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRy-Uz-ROx">
+                                <rect key="frame" x="175" y="462" width="135" height="39"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="dispatch_group"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="IP3-EM-7aX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-V4-fpI">
+                                <rect key="frame" x="8" y="462" width="135" height="39"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="global_queue 2"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="n6t-Qc-YRt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-g9-tJZ">
+                                <rect key="frame" x="8" y="509" width="135" height="39"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="dispatch_after"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="ufD-aW-bOy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6l-Jq-YaS">
+                                <rect key="frame" x="175" y="415" width="135" height="39"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="dispatch_apply"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="E3t-nC-5WL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNW-mB-p7D">
+                                <rect key="frame" x="175" y="509" width="135" height="39"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="define dispatch"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="lMT-DW-bbo" eventType="touchUpInside" id="H5s-aE-7Qz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="kTU-E5-hgu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView1" destination="pfX-Gg-YMU" id="Uxn-4y-71W"/>
+                        <outlet property="imageView2" destination="FYy-rc-taT" id="Ftx-Nm-4qX"/>
+                        <outlet property="loadingLb" destination="CLB-yd-zjZ" id="EMm-hb-VBM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8M-9i-QCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="787" y="1719"/>
         </scene>
-        <!--View Controller-->
+        <!--Operation Loadview Controller-->
         <scene sceneID="qYj-3f-aiD">
             <objects>
-                <viewController id="3U5-vN-aTA" sceneMemberID="viewController">
+                <viewController id="3U5-vN-aTA" customClass="NSOperationLoadviewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HO5-q2-akY"/>
                         <viewControllerLayoutGuide type="bottom" id="XER-g3-HYt"/>
@@ -169,26 +214,45 @@
                                 <rect key="frame" x="40" y="101" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-wY-AtZ">
-                                <rect key="frame" x="35" y="257" width="250" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加载中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sff-w1-YfZ">
+                                <rect key="frame" x="126" y="154" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-wY-AtZ">
+                                <rect key="frame" x="35" y="259" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="NSInvocationOperation"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="3U5-vN-aTA" eventType="touchUpInside" id="U1p-rM-MhS"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-K6-sTh">
-                                <rect key="frame" x="35" y="329" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="NSBlockOperation"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-ja-iwz">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-ja-iwz">
                                 <rect key="frame" x="35" y="401" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="NSOperation Subclass"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="3U5-vN-aTA" eventType="touchUpInside" id="00H-n2-DEb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-K6-sTh">
+                                <rect key="frame" x="35" y="329" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="NSBlockOperation"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="3U5-vN-aTA" eventType="touchUpInside" id="Ciy-wa-qfP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Te-3v-fMJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="AeV-uC-GRf" id="ZuO-cA-tz4"/>
+                        <outlet property="loadingLb" destination="Sff-w1-YfZ" id="AAo-mW-fsO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejw-0L-pJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
