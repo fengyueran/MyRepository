@@ -313,6 +313,28 @@
 
 }
 
+/**
+ 查找Student实例
+ */
+- (IBAction)schoolSearch:(UIButton *)sender {
+    // 建立获取数据的请求对象，指明操作的实体为Student
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    // 执行获取操作，获取所有Student托管对象
+    NSError *error = nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+     // 遍历输出查询结果
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"Student Name : %@, Age :%ld",obj.name,[obj.age integerValue]);
+    }];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"CoreData Ergodic Data Error : %@", error);
+    }
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
