@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 #import <CoreData/CoreData.h>
+#import "Employee.h"
+#import "Department.h"
+#import "Description.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong)NSManagedObjectContext *companyMOC;
 @end
 
 @implementation ViewController
@@ -54,7 +57,8 @@
     // 创建并关联SQLite数据库文件，如果已经存在则不会重复创建
     NSString *dataPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     dataPath = [dataPath stringByAppendingFormat:@"/%@.sqlite",modelName];
-    [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL URLWithString:dataPath] options:nil error:nil];
+    NSURL *storeURL = [NSURL fileURLWithPath:dataPath isDirectory:NO];
+    [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:nil];
     // 上下文对象设置属性为持久化存储器
     context.persistentStoreCoordinator =coordinator;
     
@@ -63,9 +67,55 @@
 }
 
 - (IBAction)reverseRelationshipsAdd:(UIButton *)sender {
+    // 创建Employee托管对象
+    Employee *emp1 = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.companyMOC];
+    emp1.name =@"emp1";
+    emp1.birthday = [NSDate date];
     
+    Employee *emp2 = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.companyMOC];
+    emp2.name = @"emp2";
+    emp2.birthday = [NSDate date];
+    
+    NSSet *set = [NSSet setWithObjects:emp1,emp2, nil];
+    
+    // 创建Department托管对象
+    Department *dep1 = [NSEntityDescription insertNewObjectForEntityForName:@"Department" inManagedObjectContext:self.companyMOC];
+    dep1.depName        = @"iOS";
+    dep1.createDate     = [NSDate date];
+    dep1.depDescription = [[Description alloc] init];
+    dep1.employee       = set;
+    
+//    Department *dep2    = [NSEntityDescription insertNewObjectForEntityForName:@"Department" inManagedObjectContext:self.companyMOC];
+//    dep2.depName        = @"Android";
+//    dep2.createDate     = [NSDate date];
+//    dep2.depDescription = [[Description alloc] init];
+//    dep2.employee       = emp2;
+    
+    // 保存当前上下文
+    NSError *error = nil;
+    if (self.companyMOC.hasChanges) {
+        [self.companyMOC save:&error];
+    }
+    
+    /**
+     从这条打印结果可以看出，虽然只有Department设置了employee属性，而Employee没有设置department属性。但是在Department设置关联属性后，Employee对应的属性也有值了，这就是设置inverse的区别所在。
+     也就是两者发生了双向关联的关系后，一方设置关联属性，另一方关联属性会随之发生改变。这个改变也会体现在数据库一层，也就是外键的改变。
+     */
+        NSLog(@"emp1.department = %@, emp2.department = %@, dep1.employee = %@", emp1.department, emp2.department, dep1.employee);
+//    NSLog(@"emp1.department = %@, emp2.department = %@, dep1.employee = %@, dep2.employee = %@", emp1.department, emp2.department, dep1.employee, dep2.employee);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Insert CompanyMOC Managed Object Error : %@", error);
+    }
 }
 
+- (NSManagedObjectContext *)companyMOC {
+    if (!_companyMOC) {
+        _companyMOC = [self contextWithModelName:@"Company"];
+    }
+    return _companyMOC;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

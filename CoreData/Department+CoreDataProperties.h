@@ -10,13 +10,14 @@
 //
 
 #import "Department.h"
+#import "Description.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Department (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSDate *createDate;
-@property (nullable, nonatomic, retain) id depDescription;
+@property (nullable, nonatomic, retain) Description *depDescription;
 @property (nullable, nonatomic, retain) NSString *depName;
 @property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *employee;
 

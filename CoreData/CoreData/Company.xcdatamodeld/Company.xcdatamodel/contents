@@ -14,6 +14,6 @@
     <fetchRequest name="EmployeeAge" entity="Employee" predicateString="age &gt; 20"/>
     <elements>
         <element name="Department" positionX="-378" positionY="-15" width="128" height="103"/>
-        <element name="Employee" positionX="-587" positionY="27" width="128" height="88"/>
+        <element name="Employee" positionX="-765" positionY="-0" width="128" height="88"/>
     </elements>
 </model>

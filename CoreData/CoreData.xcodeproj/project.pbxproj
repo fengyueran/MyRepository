@@ -20,6 +20,7 @@
 		82403F6A1DAB3EDA001E5336 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F641DAB3EDA001E5336 /* Department.m */; };
 		82403F6B1DAB3EDA001E5336 /* Employee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */; };
 		82403F6C1DAB3EDA001E5336 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F681DAB3EDA001E5336 /* Employee.m */; };
+		82778AF81DAB580B00206024 /* Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 82778AF71DAB580B00206024 /* Description.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Employee+CoreDataProperties.m"; path = "../Employee+CoreDataProperties.m"; sourceTree = "<group>"; };
 		82403F671DAB3EDA001E5336 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Employee.h; path = ../Employee.h; sourceTree = "<group>"; };
 		82403F681DAB3EDA001E5336 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Employee.m; path = ../Employee.m; sourceTree = "<group>"; };
+		82778AF61DAB580B00206024 /* Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Description.h; sourceTree = "<group>"; };
+		82778AF71DAB580B00206024 /* Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Description.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */,
 				82403F671DAB3EDA001E5336 /* Employee.h */,
 				82403F681DAB3EDA001E5336 /* Employee.m */,
+				82778AF61DAB580B00206024 /* Description.h */,
+				82778AF71DAB580B00206024 /* Description.m */,
 				82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */,
 			);
 			name = Company;
@@ -307,6 +312,7 @@
 				821045C81DA90337005FE955 /* main.m in Sources */,
 				82403F601DAB36B6001E5336 /* Company.xcdatamodeld in Sources */,
 				82403F6C1DAB3EDA001E5336 /* Employee.m in Sources */,
+				82778AF81DAB580B00206024 /* Description.m in Sources */,
 				82403F691DAB3EDA001E5336 /* Department+CoreDataProperties.m in Sources */,
 				82403F6A1DAB3EDA001E5336 /* Department.m in Sources */,
 			);
