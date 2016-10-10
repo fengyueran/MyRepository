@@ -191,6 +191,36 @@
 
     
 }
+
+/**
+ 删除Teacher托管对象
+ 删除Teacher对象并不会对其关联属性关联的对象造成影响，这主要还是Delete rule设置的结果
+ */
+- (IBAction)relationshipsDelete:(UIButton *)sender {
+    // 创建谓词对象，指明查找name为tea1的托管对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",@"tea1"];
+    // 创建获取请求对象，指明操作Teacher实体，并设置predicate条件
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Teacher"];
+    fetchRequest.predicate =predicate;
+    // 执行获取操作，并获取结果数组
+    NSError *error = nil;
+    NSArray<Teacher *> *teachers = [self.schoolMOC executeFetchRequest:fetchRequest error:&error];
+    [teachers enumerateObjectsUsingBlock:^(Teacher * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.schoolMOC deleteObject:obj];
+    }];
+    
+    // 执行save方法，将上下文中所做的改变，保存到持久化存储区中
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:nil];
+    }
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Delete Teacher Object Error : %@", error);
+    }
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
