@@ -25,6 +25,14 @@
                                     <action selector="reverseRelationshipsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jY-DX-Lvc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVL-hW-bWy">
+                                <rect key="frame" x="14" y="419" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="设置反向条件(删除)"/>
+                                <connections>
+                                    <action selector="reverseRelationshipsDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ErO-6T-n2B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

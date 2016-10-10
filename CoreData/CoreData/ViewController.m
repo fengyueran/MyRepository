@@ -66,6 +66,10 @@
     
 }
 
+#pragma mark - ----- Reverse Relationships ------
+/**
+ 设置了双向关联的托管对象执行添加操作
+ */
 - (IBAction)reverseRelationshipsAdd:(UIButton *)sender {
     // 创建Employee托管对象
     Employee *emp1 = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.companyMOC];
@@ -85,11 +89,11 @@
     dep1.depDescription = [[Description alloc] init];
     dep1.employee       = set;
     
-//    Department *dep2    = [NSEntityDescription insertNewObjectForEntityForName:@"Department" inManagedObjectContext:self.companyMOC];
-//    dep2.depName        = @"Android";
-//    dep2.createDate     = [NSDate date];
-//    dep2.depDescription = [[Description alloc] init];
-//    dep2.employee       = emp2;
+    Department *dep2    = [NSEntityDescription insertNewObjectForEntityForName:@"Department" inManagedObjectContext:self.companyMOC];
+    dep2.depName        = @"Android";
+    dep2.createDate     = [NSDate date];
+    dep2.depDescription = [[Description alloc] init];
+    dep2.employee       = set;
     
     // 保存当前上下文
     NSError *error = nil;
@@ -110,6 +114,37 @@
     }
 }
 
+/**
+ 删除Department托管对象
+ 在删除Department托管对象后，其对应的Employee会将关联属性设置为空，Employee并不会被一起删除
+ 在一个托管对象被删除时，其相关联的托管对象是否被删除，是由delete rule决定的
+ */
+- (IBAction)reverseRelationshipsDelete:(UIButton *)sender {
+    // 创建谓词对象，指明查找depName为ios的托管对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"depName = %@",@"Android"];
+    // 创建获取请求对象，指明操作Department实体，并设置谓词属性
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Department"];
+    fetchRequest.predicate = predicate;
+    
+    // 执行获取请求操作，得到符合条件的结果数组
+    NSError *error = nil;
+    NSArray<Department *> *departments = [self.companyMOC executeFetchRequest:fetchRequest error:&error];
+    
+     // 遍历结果数组，并通过companyMOC上下文删除托管对象
+    [departments enumerateObjectsUsingBlock:^(Department * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.companyMOC deleteObject:obj];
+    }];
+    
+    // 执行保存上下文操作，将删除的数据同步到数据库中
+    if (self.companyMOC.hasChanges) {
+        [self.companyMOC save:nil];
+    }
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Delete Department Managed Object Error : %@", error);
+    }
+}
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
