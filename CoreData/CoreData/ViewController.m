@@ -243,6 +243,37 @@
 }
 
 /**
+ 删除Student实例
+ */
+- (IBAction)schoolDelete:(UIButton *)sender {
+    // 创建谓词对象，过滤出符合要求的对象，也就是要删除的对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",@"mxh"];
+    
+    // 建立获取数据的请求对象，指明对Student实体进行删除操作
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = predicate;
+    
+     // 执行获取操作，找到要删除的对象
+    NSError *error = nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    // 遍历符合删除要求的对象数组，执行删除操作
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.schoolMOC deleteObject:obj];
+    }];
+    
+     // 保存上下文，并判断当前上下文是否有改动
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:nil];
+    }
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"CoreData Delete Data Error : %@", error);
+    }
+
+}
+
+/**
  修改Student实例
  */
 - (IBAction)schoolUpdate:(UIButton *)sender {
