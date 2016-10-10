@@ -11,9 +11,12 @@
 #import "Employee.h"
 #import "Department.h"
 #import "Description.h"
+#import "Student.h"
+#import "Teacher.h"
 
 @interface ViewController ()
 @property (nonatomic, strong)NSManagedObjectContext *companyMOC;
+@property (nonatomic, strong)NSManagedObjectContext *schoolMOC;
 @end
 
 @implementation ViewController
@@ -145,11 +148,61 @@
         NSLog(@"Delete Department Managed Object Error : %@", error);
     }
 }
+
+/**
+ 添加Student和Teacher托管对象，两者之间设置了关联关系但没有反向关联，也就是没有设置inverse。
+ 下面Teacher将Student对象添加到自己的集合属性后，在数据库中Teacher有一个指向Student的外键，而Student则不知道Teacher，也就是Student的外键没有指向Teacher。
+ 在下面NSLog的打印结果也可以看出，Teacher打印关联属性是有值的，而Student的关联属性没值。如果设置inverse结果则不同，这就是inverse设置与否的区别。
+ */
+- (IBAction)relationshipsAdd:(UIButton *)sender {
+     // 创建Student托管对象并设置属性
+    Student * stu1 = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
+    stu1.name =@"stu1";
+    stu1.age =@16;
+    
+    Student *stu2 = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
+    stu2.name = @"stu2";
+    stu2.age = @17;
+    
+    // 创建Teacher托管对象并设置属性
+    Teacher *tea1 = [NSEntityDescription insertNewObjectForEntityForName:@"Teacher" inManagedObjectContext:self.schoolMOC];
+    tea1.name = @"tea1";
+    tea1.subject = @"english";
+    [tea1 addStudentsObject:stu1];
+    
+    Teacher *tea2 = [NSEntityDescription insertNewObjectForEntityForName:@"Teacher" inManagedObjectContext:self.schoolMOC];
+    tea2.name = @"tea2";
+    tea2.subject = @"history";
+    [tea2 addStudentsObject:stu2];
+    
+     // 执行存储操作，向本地数据库中插入数据
+    NSError *error = nil;
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:&error];
+    }
+    
+    // 打印托管对象的关联属性的值
+    NSLog(@"stu1.teacher = %@, stu2.teacher = %@, tea1.student = %@, tea2.student = %@", stu1.teacher, stu2.teacher, tea1.students, tea2.students);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Association Table Add Data Error : %@", error);
+    }
+
+    
+}
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
     }
     return _companyMOC;
+}
+
+- (NSManagedObjectContext *)schoolMOC {
+    if (!_schoolMOC) {
+        _schoolMOC = [self contextWithModelName:@"School"];
+    }
+    return _schoolMOC;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

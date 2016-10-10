@@ -8,7 +8,7 @@
     <entity name="Teacher" representedClassName="Teacher" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="students" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
     </entity>
     <fetchRequest name="StudentAge" entity="Student" predicateString="age &gt;= 20"/>
     <elements>

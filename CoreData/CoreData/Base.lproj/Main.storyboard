@@ -34,9 +34,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMb-R9-0FS">
-                                <rect key="frame" x="172" y="376" width="133" height="30"/>
+                                <rect key="frame" x="172" y="423" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="设置反向条件(删除)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6io-og-VPW">
+                                <rect key="frame" x="166" y="376" width="146" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="未设置反向条件(添加)"/>
+                                <connections>
+                                    <action selector="relationshipsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="me3-eE-q2x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
