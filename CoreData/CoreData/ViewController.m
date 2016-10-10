@@ -277,7 +277,40 @@
  修改Student实例
  */
 - (IBAction)schoolUpdate:(UIButton *)sender {
+    // 创建谓词对象，设置过滤条件
+    NSPredicate *predivate = [NSPredicate predicateWithFormat:@"name = %@",@"mxh"];
+    // 建立获取数据的请求对象，并指明操作的实体为Student
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = predivate;
     
+     // 执行获取请求，获取到符合要求的托管对象
+    NSError *error = nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+     // 遍历获取到的数组，并执行修改操作
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"obj.age=%@",obj.age);
+        obj.age = @19;
+    }];
+    
+    // 将上面的修改进行存储
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:nil];
+    }
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"CoreData Update Data Error : %@", error);
+    }
+    
+    /**
+     在上面简单的设置了NSPredicate的过滤条件，对于比较复杂的业务需求，还可以设置复合过滤条件，例如下面的例子
+     [NSPredicate predicateWithFormat:@"(age < 25) AND (firstName = XiaoZhuang)"]
+     
+     也可以通过NSCompoundPredicate对象来设置复合过滤条件
+     [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:@[predicate1, predicate2]]
+     */
+
 }
 
 - (NSManagedObjectContext *)companyMOC {
