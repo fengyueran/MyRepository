@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
+    </entity>
+    <fetchRequest name="StudentAge" entity="Student" predicateString="age &gt;= 20"/>
+    <elements>
+        <element name="Student" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Teacher" positionX="-524" positionY="-162" width="128" height="88"/>
+    </elements>
+</model>
