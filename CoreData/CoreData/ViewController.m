@@ -221,6 +221,34 @@
     
 }
 
+/**
+ 添加Student实例
+ */
+- (IBAction)schoolAdd:(UIButton *)sender {
+    Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
+    student.name = @"mxh";
+     // 实体中所有基础数据类型，创建类文件后默认都是NSNumber类型的
+    student.age = @17;
+    
+      // 通过上下文保存对象，并在保存前判断是否有更改
+    NSError *error = nil;
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:&error];
+    }
+    // 错误处理，可以在这实现自己的错误处理逻辑
+    if (error) {
+        NSLog(@"CoreData Insert Data Error : %@", error);
+    }
+    
+}
+
+/**
+ 修改Student实例
+ */
+- (IBAction)schoolUpdate:(UIButton *)sender {
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];

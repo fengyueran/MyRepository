@@ -25,6 +25,14 @@
                                     <action selector="reverseRelationshipsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jY-DX-Lvc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6io-og-VPW">
+                                <rect key="frame" x="166" y="376" width="146" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="未设置反向条件(添加)"/>
+                                <connections>
+                                    <action selector="relationshipsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="me3-eE-q2x"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVL-hW-bWy">
                                 <rect key="frame" x="14" y="423" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,12 +49,20 @@
                                     <action selector="relationshipsDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nhj-bQ-mgz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6io-og-VPW">
-                                <rect key="frame" x="166" y="376" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQZ-1c-cZV">
+                                <rect key="frame" x="173" y="107" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="未设置反向条件(添加)"/>
+                                <state key="normal" title="school-改"/>
                                 <connections>
-                                    <action selector="relationshipsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="me3-eE-q2x"/>
+                                    <action selector="schoolUpdate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6A7-vD-uUn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgD-Wu-HCH">
+                                <rect key="frame" x="20" y="107" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="school-增"/>
+                                <connections>
+                                    <action selector="schoolAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7j0-a3-96O"/>
                                 </connections>
                             </button>
                         </subviews>
