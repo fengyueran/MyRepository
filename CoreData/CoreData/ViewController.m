@@ -335,6 +335,37 @@
     
 }
 
+/**
+ 对请求结果进行排序
+ 这个排序是发生在数据库一层的，并不是将结果取出后排序，所以效率比较高
+ */
+- (IBAction)resultSort:(UIButton *)sender {
+    // 设置请求条件，通过设置的条件，来过滤出需要的数据
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE %@",@"*mxh"];
+    // 建立获取数据的请求对象，并指明操作Student表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate =predicate;
+    
+    // 设置请求结果排序方式，可以设置一个或一组排序方式，最后将所有的排序方式添加到排序数组中
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:YES];
+    // NSSortDescriptor的操作都是在SQLite层级完成的，不会将对象加载到内存中，所以对内存的消耗是非常小的
+    // 下面request的sort对象是一个数组，也就是可以设置多种排序条件，但注意条件不要冲突
+    request.sortDescriptors = @[sort];
+    
+     // 执行获取请求操作，获取的托管对象将会被存储在一个数组中并返回
+    NSError *error =nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"Employee Name : %@, Age : %ld", obj.name, [obj.age integerValue]);
+    }];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"CoreData Fetch Data Error : %@", error);
+    }
+    
+    
+}
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];

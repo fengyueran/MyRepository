@@ -81,6 +81,14 @@
                                     <action selector="schoolSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvt-OR-LVh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-RA-mMN">
+                                <rect key="frame" x="173" y="210" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="请求结果排序"/>
+                                <connections>
+                                    <action selector="resultSort:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCu-GX-Dwy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
