@@ -16,6 +16,10 @@
 		821045E11DA90337005FE955 /* CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 821045E01DA90337005FE955 /* CoreDataTests.m */; };
 		821045EC1DA90337005FE955 /* CoreDataUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 821045EB1DA90337005FE955 /* CoreDataUITests.m */; };
 		82403F601DAB36B6001E5336 /* Company.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */; };
+		82403F691DAB3EDA001E5336 /* Department+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F621DAB3EDA001E5336 /* Department+CoreDataProperties.m */; };
+		82403F6A1DAB3EDA001E5336 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F641DAB3EDA001E5336 /* Department.m */; };
+		82403F6B1DAB3EDA001E5336 /* Employee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */; };
+		82403F6C1DAB3EDA001E5336 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 82403F681DAB3EDA001E5336 /* Employee.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		821045EB1DA90337005FE955 /* CoreDataUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataUITests.m; sourceTree = "<group>"; };
 		821045ED1DA90337005FE955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82403F5F1DAB36B6001E5336 /* Company.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Company.xcdatamodel; sourceTree = "<group>"; };
+		82403F611DAB3EDA001E5336 /* Department+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Department+CoreDataProperties.h"; path = "../Department+CoreDataProperties.h"; sourceTree = "<group>"; };
+		82403F621DAB3EDA001E5336 /* Department+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Department+CoreDataProperties.m"; path = "../Department+CoreDataProperties.m"; sourceTree = "<group>"; };
+		82403F631DAB3EDA001E5336 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Department.h; path = ../Department.h; sourceTree = "<group>"; };
+		82403F641DAB3EDA001E5336 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Department.m; path = ../Department.m; sourceTree = "<group>"; };
+		82403F651DAB3EDA001E5336 /* Employee+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Employee+CoreDataProperties.h"; path = "../Employee+CoreDataProperties.h"; sourceTree = "<group>"; };
+		82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Employee+CoreDataProperties.m"; path = "../Employee+CoreDataProperties.m"; sourceTree = "<group>"; };
+		82403F671DAB3EDA001E5336 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Employee.h; path = ../Employee.h; sourceTree = "<group>"; };
+		82403F681DAB3EDA001E5336 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Employee.m; path = ../Employee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +158,14 @@
 		82403F5D1DAB369A001E5336 /* Company */ = {
 			isa = PBXGroup;
 			children = (
+				82403F611DAB3EDA001E5336 /* Department+CoreDataProperties.h */,
+				82403F621DAB3EDA001E5336 /* Department+CoreDataProperties.m */,
+				82403F631DAB3EDA001E5336 /* Department.h */,
+				82403F641DAB3EDA001E5336 /* Department.m */,
+				82403F651DAB3EDA001E5336 /* Employee+CoreDataProperties.h */,
+				82403F661DAB3EDA001E5336 /* Employee+CoreDataProperties.m */,
+				82403F671DAB3EDA001E5336 /* Employee.h */,
+				82403F681DAB3EDA001E5336 /* Employee.m */,
 				82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */,
 			);
 			name = Company;
@@ -281,10 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82403F6B1DAB3EDA001E5336 /* Employee+CoreDataProperties.m in Sources */,
 				821045CE1DA90337005FE955 /* ViewController.m in Sources */,
 				821045CB1DA90337005FE955 /* AppDelegate.m in Sources */,
 				821045C81DA90337005FE955 /* main.m in Sources */,
 				82403F601DAB36B6001E5336 /* Company.xcdatamodeld in Sources */,
+				82403F6C1DAB3EDA001E5336 /* Employee.m in Sources */,
+				82403F691DAB3EDA001E5336 /* Department+CoreDataProperties.m in Sources */,
+				82403F6A1DAB3EDA001E5336 /* Department.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
