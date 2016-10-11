@@ -637,6 +637,35 @@
     
 }
 
+#pragma mark - ----- Asynchronous Request ------
+
+/**
+ 异步处理
+ */
+- (IBAction)asyncRequest:(UIButton *)sender {
+    // 创建请求对象，并指明操作Student表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    
+     // 创建异步请求对象，并通过一个block进行回调，返回结果是一个NSAsynchronousFetchResult类型参数
+    NSAsynchronousFetchRequest *asycFetchRequest = [[NSAsynchronousFetchRequest alloc]initWithFetchRequest:request completionBlock:^(NSAsynchronousFetchResult * _Nonnull result) {
+        // 通过返回结果的finalResult属性，获取结果数组
+        [result.finalResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+            NSLog(@"fetch request result Student.count = %ld", result.finalResult.count);
+        }];
+    }];
+    
+    // 执行异步请求，和批量处理执行同一个请求方法
+    NSError *error = nil;
+    [self.schoolMOC executeRequest:asycFetchRequest error:&error];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"fetch request result error : %@", error);
+    }
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
