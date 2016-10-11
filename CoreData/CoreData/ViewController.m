@@ -571,6 +571,40 @@
     
 }
 
+#pragma mark - ----- Batch Operation ------
+
+/**
+ 注意：无论是批量更新还是批量删除，这个批量操作都是发生在SQLite层的。然而在SQLite发生了批量操作后，并不会主动更新上层MOC中缓存的托管对象，所以在进行批量操作后，需要对相关的MOC进行更新操作。
+ 虽然在客户端很少遇到大量数据处理的情况，但是如果遇到这样的需求，推荐使用批量处理API。
+ */
+
+/**
+ 批量更新
+ */
+- (IBAction)batchUpdate:(UIButton *)sender {
+    // 创建批量更新对象，并指明操作Student表
+        NSBatchUpdateRequest *updateRequest = [NSBatchUpdateRequest batchUpdateRequestWithEntityName:@"Student"];
+    // 设置返回值类型，默认是什么都不返回(NSStatusOnlyResultType)，这里设置返回发生改变的对象Count值
+    updateRequest.resultType = NSUpdatedObjectsCountResultType;
+    updateRequest.propertiesToUpdate = @{@"name":@"xinghunm"};
+    
+    // 执行请求后，返回值是一个特定的result对象，通过result的属性获取返回的结果。
+    // MOC的这个API是从iOS8出来的，所以需要注意版本兼容。
+    NSError *error =nil;
+    NSBatchUpdateResult *result = [self.schoolMOC executeRequest:updateRequest error:&error];
+    NSLog(@"batch update count is %ld", [result.result integerValue]);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"batch update request result error : %@", error);
+    }
+    
+    // 更新MOC中的托管对象，使MOC和本地持久化区数据同步
+    [self.schoolMOC refreshAllObjects];
+    
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
