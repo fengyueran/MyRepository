@@ -501,6 +501,29 @@
 
 }
 
+/**
+ 获取返回结果的Count值，通过调用MOC提供的特定方法
+ */
+- (IBAction)getResultCount2:(UIButton *)sender {
+    // 设置过滤条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age < 24"];
+    
+    // 创建请求对象，指明操作Student表
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    fetchRequest.predicate = predicate;
+    
+    // 通过调用MOC的countForFetchRequest:error:方法，获取请求结果count值，返回结果直接是NSUInteger类型变量
+    NSError *error = nil;
+    NSUInteger count = [self.schoolMOC countForFetchRequest:fetchRequest error:&error];
+    NSLog(@"fetch request result count is : %ld", count);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"fetch request result error : %@", error);
+    }
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
