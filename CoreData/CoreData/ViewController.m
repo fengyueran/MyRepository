@@ -605,6 +605,38 @@
     
 }
 
+/**
+ 批量删除
+ */
+- (IBAction)batchDelete:(UIButton *)sender {
+     // 通过谓词设置过滤条件，设置条件为age小于20
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age < %ld",@"20"];
+    
+    // 创建请求对象，并指明对Student表做操作
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = predicate;
+    
+    // 创建批量删除请求，并使用上面创建的请求对象当做参数进行初始化
+    NSBatchDeleteRequest *deleteRequest = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+    
+     // 设置请求结果类型，设置为受影响对象的Count
+    deleteRequest.resultType = NSBatchDeleteResultTypeCount;
+    
+    // 使用NSBatchDeleteResult对象来接受返回结果，通过id类型的属性result获取结果
+    NSError *error = nil;
+    NSBatchDeleteResult *result = [self.schoolMOC executeRequest:deleteRequest error:&error];
+    NSLog(@"batch delete request result count is %ld", [result.result integerValue]);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"batch delete request error : %@", error);
+    }
+    
+    // 更新MOC中的托管对象，使MOC和本地持久化区数据同步
+    [self.schoolMOC refreshAllObjects];
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];
