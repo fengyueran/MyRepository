@@ -413,6 +413,33 @@
     
 }
 
+#pragma mark - ----- Fetch Request ------
+
+/**
+ 加载模型文件中设置的FetchRequest请求模板，模板名为StudentAge，在School.xcdatamodeld中设置
+ */
+- (IBAction)fetchRequest:(UIButton *)sender {
+    // 通过MOC获取托管对象模型，托管对象模型相当于.xcdatamodeld文件，存储着.xcdatamodeld文件的结构
+    NSManagedObjectModel *model = self.schoolMOC.persistentStoreCoordinator.managedObjectModel;
+    
+     // 通过.xcdatamodeld文件中设置的模板名，获取请求对象
+    NSFetchRequest *request = [model fetchRequestTemplateForName:@"StudentAge"];
+    
+    // 请求数据，下面的操作和普通请求一样
+    NSError *error = nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+     // 遍历获取结果，并打印结果
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         NSLog(@"Student.count = %ld, Student.age = %ld", students.count, [obj.age integerValue]);
+    }];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Execute Fetch Request Error : %@", error);
+    }
+}
+
 /**
  对请求结果进行排序
  这个排序是发生在数据库一层的，并不是将结果取出后排序，所以效率比较高
