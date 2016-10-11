@@ -524,6 +524,53 @@
     
 }
 
+/**
+ 对返回的结果进行按位运算，这个运算是发生在SQLite数据库层的，所以执行效率很快，对内存的消耗也很小
+ 如果需要对托管对象的某个属性进行运算，比较推荐这种效率高的方法
+ */
+- (IBAction)bitwiseArithmetic:(UIButton *)sender {
+     // 创建请求对象，指明操作Student表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    
+    // 设置返回值为字典类型，这是为了结果可以通过设置的name名取出，这一步是必须的
+    request.resultType = NSDictionaryResultType;
+    
+    // 创建描述对象的name字符串
+    NSString *descriptionName = @"sumOperation";
+    // 创建描述对象
+    NSExpressionDescription *expressionDes = [[NSExpressionDescription alloc]init];
+    // 设置描述对象的name，最后结果需要用这个name当做key来取出结果
+    expressionDes.name = descriptionName;
+     // 设置返回值类型，根据运算结果设置类型
+    expressionDes.expressionResultType = NSInteger16AttributeType;
+    
+    // 创建具体描述对象，用来描述对哪个属性进行什么运算(可执行的运算类型很多，这里描述的是对age属性，做sum运算)
+    NSExpression *expression = [NSExpression expressionForFunction:@"sum:" arguments:@[[NSExpression expressionForKeyPath:@"age"]]];
+    // 只能对应一个具体描述对象
+    expressionDes.expression = expression;
+    // 给请求对象设置描述对象，这里是一个数组类型，也就是可以设置多个描述对象
+    request.propertiesToFetch = @[expressionDes];
+    
+    // 执行请求，返回值还是一个数组，数组中只有一个元素，就是存储计算结果的字典
+    NSError *error = nil;
+    NSArray *resultArr =[self.schoolMOC executeFetchRequest:request error:&error];
+    
+     // 通过上面设置的name值，当做请求结果的key取出计算结果
+    NSNumber *number = resultArr.firstObject[descriptionName];
+    NSLog(@"fetch request result is %ld", [number integerValue]);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"fetch request result error : %@", error);
+    }
+    
+    /**
+     位运算支持的算法种类很多，具体可以在NSExpression.h文件中查看
+     */
+
+    
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];

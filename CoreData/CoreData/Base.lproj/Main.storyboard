@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQZ-1c-cZV">
-                                <rect key="frame" x="173" y="107" width="133" height="30"/>
+                                <rect key="frame" x="173" y="59" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="school-改"/>
                                 <connections>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgD-Wu-HCH">
-                                <rect key="frame" x="20" y="107" width="133" height="30"/>
+                                <rect key="frame" x="20" y="59" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="school-增"/>
                                 <connections>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwW-gA-NO6">
-                                <rect key="frame" x="20" y="151" width="133" height="30"/>
+                                <rect key="frame" x="20" y="103" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="school-删"/>
                                 <connections>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48K-p3-PVh">
-                                <rect key="frame" x="173" y="151" width="133" height="30"/>
+                                <rect key="frame" x="173" y="103" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="school-查"/>
                                 <connections>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-RA-mMN">
-                                <rect key="frame" x="173" y="264" width="133" height="30"/>
+                                <rect key="frame" x="173" y="216" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="请求结果排序"/>
                                 <connections>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-vX-Pvm">
-                                <rect key="frame" x="20" y="264" width="133" height="30"/>
+                                <rect key="frame" x="20" y="216" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="加载请求模板"/>
                                 <connections>
@@ -98,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-wG-Puw">
-                                <rect key="frame" x="20" y="302" width="133" height="30"/>
+                                <rect key="frame" x="20" y="254" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="获取Count方法1"/>
                                 <connections>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-cW-Dhz">
-                                <rect key="frame" x="20" y="210" width="133" height="30"/>
+                                <rect key="frame" x="20" y="162" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="分页查询"/>
                                 <connections>
@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-J6-EWh">
-                                <rect key="frame" x="173" y="210" width="133" height="30"/>
+                                <rect key="frame" x="173" y="162" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="模糊查询"/>
                                 <connections>
@@ -130,21 +130,33 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeN-0C-1dV">
-                                <rect key="frame" x="0.0" y="201" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="153" width="320" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7q-XL-whk">
-                                <rect key="frame" x="0.0" y="248" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="200" width="320" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-Uz-hOH">
-                                <rect key="frame" x="173" y="302" width="133" height="30"/>
+                                <rect key="frame" x="173" y="254" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="获取Count方法2"/>
                                 <connections>
                                     <action selector="getResultCount2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHl-ia-gkq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E06-mF-0Q9">
+                                <rect key="frame" x="94" y="297" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="位运算"/>
+                                <connections>
+                                    <action selector="bitwiseArithmetic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eth-Ku-jdt"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-5Y-SBs">
+                                <rect key="frame" x="0.0" y="335" width="320" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
