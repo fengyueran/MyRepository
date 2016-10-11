@@ -157,7 +157,7 @@
 - (IBAction)relationshipsAdd:(UIButton *)sender {
      // 创建Student托管对象并设置属性
     Student * stu1 = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
-    stu1.name =@"stu1";
+    stu1.name =@"13527466666";
     stu1.age =@16;
     
     Student *stu2 = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
@@ -226,7 +226,7 @@
  */
 - (IBAction)schoolAdd:(UIButton *)sender {
     Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
-    student.name = @"mxh";
+    student.name = @"13527499999";
      // 实体中所有基础数据类型，创建类文件后默认都是NSNumber类型的
     student.age = @17;
     
@@ -367,6 +367,50 @@
     if (error) {
         NSLog(@"Page Search Data Error : %@", error);
     }
+}
+
+/**
+ 模糊查询
+ */
+- (IBAction)fuzzySearch:(UIButton *)sender {
+     // 创建模糊查询条件。这里设置的带通配符的查询，查询条件是结果包含lxz
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE %@",@"*mxh*"];
+    
+     NSString *mobile = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";//[0-35-9]将匹配一个数字范围在0-3或5-9范围内的数字,[025-9]将匹配一个数字范围在0-2或5-9范围内的数字
+     NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"name MATCHES %@", mobile];
+    // 创建获取数据的请求对象，设置对Student表进行操作
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = predicate4;
+    
+    
+    // 执行查询操作
+    NSError *error =nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+    // 遍历输出查询结果
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         NSLog(@"Fuzzy Search Result Name : %@, Age : %ld", obj.name, [obj.age integerValue]);
+    }];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Fuzzy Search Data Error : %@", error);
+    }
+    
+    /**
+    模糊查询的关键在于设置模糊查询条件，除了上面的模糊查询条件，还可以设置下面三种条件
+    */
+    // 以lxz开头
+    // NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"name BEGINSWITH %@", @"lxz"];
+    // 以lxz结尾
+    // NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"name ENDSWITH %@"  , @"lxz"];
+    // 其中包含lxz
+    // NSPredicate *predicate3 = [NSPredicate predicateWithFormat:@"name contains %@"  , @"lxz"];
+    // 还可以设置正则表达式作为查找条件，这样使查询条件更加强大，下面只是给了个例子
+    // NSString *mobile = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";//[0-35-9]将匹配一个数字范围在0-3或5-9范围内的数字,[025-9]将匹配一个数字范围在0-2或5-9范围内的数字
+    // NSPredicate *predicate4 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobile];
+
+    
 }
 
 /**
