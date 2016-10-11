@@ -335,6 +335,40 @@
     
 }
 
+#pragma mark - ----- Page && Fuzzy ------
+
+/**
+ 分页查询
+ */
+- (IBAction)pageSearch:(UIButton *)sender {
+    // 创建获取数据的请求对象，并指明操作Student表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    
+    // 设置查找起始点，这里是从搜索结果的第六个开始获取
+    request.fetchOffset = 6;
+    
+     // 设置分页，每次请求获取六个托管对象
+    request.fetchLimit = 6;
+    
+    // 设置排序规则，这里设置年龄升序排序
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:YES];
+    request.sortDescriptors = @[descriptor];
+    
+     // 执行查询操作
+    NSError *error = nil;
+    NSArray<Student *> *students = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+     // 遍历输出查询结果
+    [students enumerateObjectsUsingBlock:^(Student * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"Page Search Result Name : %@, Age : %ld", obj.name, [obj.age integerValue]);
+    }];
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"Page Search Data Error : %@", error);
+    }
+}
+
 /**
  对请求结果进行排序
  这个排序是发生在数据库一层的，并不是将结果取出后排序，所以效率比较高
@@ -378,6 +412,21 @@
         _schoolMOC = [self contextWithModelName:@"School"];
     }
     return _schoolMOC;
+}
+
+/**
+ 添加Student实体的测试数据
+ */
+- (IBAction)addTestData:(UIButton *)sender {
+    for (int i=0; i<14; i++) {
+        Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.schoolMOC];
+        student.name = [NSString stringWithFormat:@"mxh %d", i];
+        student.age  = @(i+15);
+    }
+    NSError *error = nil;
+    if (self.schoolMOC.hasChanges) {
+        [self.schoolMOC save:&error];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
