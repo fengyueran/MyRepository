@@ -471,6 +471,36 @@
     
     
 }
+
+/**
+ 获取返回结果的Count值，通过设置NSFetchRequest的resultType属性
+ */
+- (IBAction)getResultCount1:(UIButton *)sender {
+    // 设置过滤条件，可以根据需求设置自己的过滤条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age < 24"];
+    
+    // 创建请求对象，并指明操作Student表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+    request.predicate = predicate;
+    
+     // 这一步是关键。设置返回结果类型为Count，返回结果为NSNumber类型
+    request.resultType = NSCountResultType;
+    
+    // 执行查询操作，返回的结果还是数组，数组中只存在一个对象，就是计算出的Count值
+    NSError *error = nil;
+    NSArray *dataList = [self.schoolMOC executeFetchRequest:request error:&error];
+    
+    // 返回结果存在数组的第一个元素中，是一个NSNumber的对象，通过这个对象即可获得Count值
+    NSInteger count = [dataList.firstObject integerValue];
+    NSLog(@"fetch request result Employee.count = %ld", count);
+    
+    // 错误处理
+    if (error) {
+        NSLog(@"fetch request result error : %@", error);
+    }
+
+}
+
 - (NSManagedObjectContext *)companyMOC {
     if (!_companyMOC) {
         _companyMOC = [self contextWithModelName:@"Company"];

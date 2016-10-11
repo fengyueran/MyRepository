@@ -89,6 +89,22 @@
                                     <action selector="resultSort:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCu-GX-Dwy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-vX-Pvm">
+                                <rect key="frame" x="20" y="264" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="加载请求模板"/>
+                                <connections>
+                                    <action selector="fetchRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxt-FC-Igf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-wG-Puw">
+                                <rect key="frame" x="20" y="302" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="获取Count方法1"/>
+                                <connections>
+                                    <action selector="getResultCount1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="INZ-eg-UWg"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-cW-Dhz">
                                 <rect key="frame" x="20" y="210" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,13 +137,10 @@
                                 <rect key="frame" x="0.0" y="248" width="320" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-vX-Pvm">
-                                <rect key="frame" x="20" y="264" width="133" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-Uz-hOH">
+                                <rect key="frame" x="173" y="302" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="加载请求模板"/>
-                                <connections>
-                                    <action selector="fetchRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxt-FC-Igf"/>
-                                </connections>
+                                <state key="normal" title="获取Count方法2"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
