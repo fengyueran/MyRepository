@@ -22,6 +22,9 @@
 		824402A71DACBD8C0095CB71 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 824402A51DACBD8C0095CB71 /* Employee.m */; };
 		824402AB1DACBE000095CB71 /* FRCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824402A91DACBE000095CB71 /* FRCViewController.m */; };
 		824402AC1DACBE000095CB71 /* FRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824402AA1DACBE000095CB71 /* FRCViewController.xib */; };
+		824402B01DACC5F00095CB71 /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 824402AE1DACC5F00095CB71 /* Chat.xcdatamodeld */; };
+		824402B51DACC63C0095CB71 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 824402B21DACC63C0095CB71 /* User+CoreDataProperties.m */; };
+		824402B61DACC63C0095CB71 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 824402B41DACC63C0095CB71 /* User.m */; };
 		82778AF81DAB580B00206024 /* Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 82778AF71DAB580B00206024 /* Description.m */; };
 		82778AFC1DAB7EC000206024 /* School.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82778AFA1DAB7EC000206024 /* School.xcdatamodeld */; };
 		82778B171DAB859800206024 /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 82778B101DAB859800206024 /* Student+CoreDataProperties.m */; };
@@ -76,6 +79,12 @@
 		824402A81DACBE000095CB71 /* FRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCViewController.h; sourceTree = "<group>"; };
 		824402A91DACBE000095CB71 /* FRCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCViewController.m; sourceTree = "<group>"; };
 		824402AA1DACBE000095CB71 /* FRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRCViewController.xib; sourceTree = "<group>"; };
+		824402AF1DACC5F00095CB71 /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
+		824402B11DACC63C0095CB71 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		824402B21DACC63C0095CB71 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		824402B31DACC63C0095CB71 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		824402B41DACC63C0095CB71 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		825A76601DB720300035C03A /* Company_1.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Company_1.1.0.xcdatamodel; sourceTree = "<group>"; };
 		82778AF61DAB580B00206024 /* Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Description.h; sourceTree = "<group>"; };
 		82778AF71DAB580B00206024 /* Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Description.m; sourceTree = "<group>"; };
 		82778AFB1DAB7EC000206024 /* School.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = School.xcdatamodel; sourceTree = "<group>"; };
@@ -144,6 +153,7 @@
 				824402A81DACBE000095CB71 /* FRCViewController.h */,
 				824402A91DACBE000095CB71 /* FRCViewController.m */,
 				824402AA1DACBE000095CB71 /* FRCViewController.xib */,
+				824402AD1DACC5D40095CB71 /* Chat */,
 				82778AF91DAB7EA400206024 /* School */,
 				82403F5D1DAB369A001E5336 /* Company */,
 				821045CF1DA90337005FE955 /* Main.storyboard */,
@@ -184,6 +194,7 @@
 		82403F5D1DAB369A001E5336 /* Company */ = {
 			isa = PBXGroup;
 			children = (
+				82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */,
 				82403F611DAB3EDA001E5336 /* Department+CoreDataProperties.h */,
 				82403F621DAB3EDA001E5336 /* Department+CoreDataProperties.m */,
 				82403F631DAB3EDA001E5336 /* Department.h */,
@@ -194,9 +205,20 @@
 				824402A31DACBD8C0095CB71 /* Employee+CoreDataProperties.m */,
 				824402A41DACBD8C0095CB71 /* Employee.h */,
 				824402A51DACBD8C0095CB71 /* Employee.m */,
-				82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */,
 			);
 			name = Company;
+			sourceTree = "<group>";
+		};
+		824402AD1DACC5D40095CB71 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				824402AE1DACC5F00095CB71 /* Chat.xcdatamodeld */,
+				824402B11DACC63C0095CB71 /* User+CoreDataProperties.h */,
+				824402B21DACC63C0095CB71 /* User+CoreDataProperties.m */,
+				824402B31DACC63C0095CB71 /* User.h */,
+				824402B41DACC63C0095CB71 /* User.m */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		82778AF91DAB7EA400206024 /* School */ = {
@@ -348,6 +370,7 @@
 			files = (
 				82778B171DAB859800206024 /* Student+CoreDataProperties.m in Sources */,
 				821045CE1DA90337005FE955 /* ViewController.m in Sources */,
+				824402B61DACC63C0095CB71 /* User.m in Sources */,
 				821045CB1DA90337005FE955 /* AppDelegate.m in Sources */,
 				82778AFC1DAB7EC000206024 /* School.xcdatamodeld in Sources */,
 				821045C81DA90337005FE955 /* main.m in Sources */,
@@ -355,9 +378,11 @@
 				82778B1A1DAB859800206024 /* Teacher.m in Sources */,
 				82778AF81DAB580B00206024 /* Description.m in Sources */,
 				82403F691DAB3EDA001E5336 /* Department+CoreDataProperties.m in Sources */,
+				824402B01DACC5F00095CB71 /* Chat.xcdatamodeld in Sources */,
 				824402AB1DACBE000095CB71 /* FRCViewController.m in Sources */,
 				82778B191DAB859800206024 /* Teacher+CoreDataProperties.m in Sources */,
 				82403F6A1DAB3EDA001E5336 /* Department.m in Sources */,
+				824402B51DACC63C0095CB71 /* User+CoreDataProperties.m in Sources */,
 				824402A61DACBD8C0095CB71 /* Employee+CoreDataProperties.m in Sources */,
 				82778B181DAB859800206024 /* Student.m in Sources */,
 				824402A71DACBD8C0095CB71 /* Employee.m in Sources */,
@@ -610,10 +635,21 @@
 		82403F5E1DAB36B6001E5336 /* Company.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				825A76601DB720300035C03A /* Company_1.1.0.xcdatamodel */,
 				82403F5F1DAB36B6001E5336 /* Company.xcdatamodel */,
 			);
-			currentVersion = 82403F5F1DAB36B6001E5336 /* Company.xcdatamodel */;
+			currentVersion = 825A76601DB720300035C03A /* Company_1.1.0.xcdatamodel */;
 			path = Company.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		824402AE1DACC5F00095CB71 /* Chat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				824402AF1DACC5F00095CB71 /* Chat.xcdatamodel */,
+			);
+			currentVersion = 824402AF1DACC5F00095CB71 /* Chat.xcdatamodel */;
+			path = Chat.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

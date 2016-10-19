@@ -13,6 +13,7 @@
 #import "Description.h"
 #import "Student.h"
 #import "Teacher.h"
+#import "FRCViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong)NSManagedObjectContext *companyMOC;
@@ -678,6 +679,14 @@
         _schoolMOC = [self contextWithModelName:@"School"];
     }
     return _schoolMOC;
+}
+
+#pragma mark - ----- NSFetchedResultsController ------
+
+- (IBAction)fetchRequestController:(UIButton *)sender {
+    FRCViewController *frcVC = [[FRCViewController alloc]initWithNibName:@"FRCViewController" bundle:nil];
+    [self presentedViewController];
+    [self presentViewController:frcVC animated:YES completion:nil];
 }
 
 /**
