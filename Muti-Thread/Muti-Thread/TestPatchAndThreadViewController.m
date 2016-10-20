@@ -172,11 +172,68 @@
 
 - (IBAction)blockMainThread:(UIButton *)sender {
     
+    //[self blockedMainThread0];
+    //[self blockedMainThread1];
+    //[self blockedMainThread2];
+    [self blockedMainThread3];
+
+}
+
+- (void)blockedMainThread0 {
+    //打印结果是1  分析：mainQueue里存在任务blockedMainThread0和同步线程任务，当执行dispatch_sync时，把打印任务2加入主队列，想要打印2必须等主队列所有的任务都执行完成，这时候因为主队列里有同步线程任务，这时候相当于自己在等自己执行完成，进入死循环。
+    NSLog(@"1"); // 任务1
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"2"); // 任务2,同步线程任务
+    });
+    NSLog(@"3"); // 任务3
     
 }
 
+-(void)blockedMainThread1 {
+    //打印结果123  分析：mainQueue里存在任务1，，当执行dispatch_sync时，把同步线程任务2加入到全局队列，
+    //在主线程中一次执行主队列，全局队列的任务。
+    NSLog(@"1"); // 任务1
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"2"); // 任务2,同步线程任务
+    });
+    NSLog(@"3"); // 任务3
+}
 
+-(void)blockedMainThread2
+{
+    /*
+     //执行结果：
+     2016-10-20 17:11:49.873 Muti-Thread[7033:290301] 1
+     2016-10-20 17:11:49.873 Muti-Thread[7033:290301] 5
+     2016-10-20 17:11:49.873 Muti-Thread[7033:290347] 2 <NSThread: 0x7fecd172f150>{number = 2, name = (null)}
+     */
+    dispatch_queue_t queue = dispatch_queue_create("串行队列", DISPATCH_QUEUE_SERIAL);
+    NSLog(@"1"); // 任务1
+    dispatch_async(queue, ^{//该队列里有任务3，需要执行完该队列所有任务才能执行任务3，死循环。串行队列中由于任务3不能执行，导致任务4不能执行。
+        NSLog(@"2 %@",[NSThread currentThread]); // 任务2
+        
+        dispatch_sync(queue, ^{
+            NSLog(@"3"); // 任务3
+        });
+        NSLog(@"4"); // 任务4
+    });
+    NSLog(@"5"); // 任务5
+}
 
-
+-(void)blockedMainThread3
+{
+    //1,5,2,3,4 可以看出在全局队列里拿到住队列同步执行是没有问题的。
+    NSLog(@"1"); // 任务1
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"2"); // 任务2
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"3 %@",[NSThread currentThread]); // 任务3
+            //2016-02-05 22:51:00.044 GcdTest[7548:198417] 3 <NSThread: 0x7feb3b701be0>{number = 1, name = main}
+        });
+        NSLog(@"4"); // 任务4
+    });
+    NSLog(@"5"); // 任务5
+    
+}
 
 @end
