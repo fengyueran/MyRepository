@@ -73,6 +73,7 @@
 //并行队列global dispatch queue
 -(void)globalQueue {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+         NSLog(@"====current thread=%@",[NSThread currentThread]);
         [self loadImageSource:imgUrl1];
     });
     
@@ -81,13 +82,14 @@
 //UI线程执行(只是为了测试,长时间的加载不能放在主线程)
 - (void)mainQueue {
     dispatch_async(dispatch_get_main_queue(), ^{
+         NSLog(@"====current thread=%@",[NSThread currentThread]);
         [self loadImageSource:imgUrl1];
     });
 }
 
 //一次性执行(常用来写单例)
 - (void)dispatchOnce {
-    static dispatch_once_t onceToken;
+    static dispatch_once_t onceToken;//其中第一个参数predicate，该参数是检查后面第二个参数所代表的代码块是否被调用的谓词
     dispatch_once(&onceToken, ^{
         [self loadImageSource:imgUrl1];
     });
@@ -99,6 +101,7 @@
     size_t count = 3;
     dispatch_apply(count, queue, ^(size_t i) {
         NSLog(@"循环执行第%li次",i);
+        NSLog(@"====current thread=%@",[NSThread currentThread]);
         [self loadImageSource:imgUrl1];
     });
 }

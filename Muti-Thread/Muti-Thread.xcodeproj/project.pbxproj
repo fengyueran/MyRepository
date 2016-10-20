@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82027E341DB8680F0008AD6D /* TestPatchAndThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82027E331DB8680F0008AD6D /* TestPatchAndThreadViewController.m */; };
 		824343351DAA170300E841FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 824343341DAA170300E841FD /* main.m */; };
 		824343381DAA170300E841FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824343371DAA170300E841FD /* AppDelegate.m */; };
 		8243433B1DAA170300E841FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8243433A1DAA170300E841FD /* ViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82027E321DB8680F0008AD6D /* TestPatchAndThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPatchAndThreadViewController.h; sourceTree = "<group>"; };
+		82027E331DB8680F0008AD6D /* TestPatchAndThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPatchAndThreadViewController.m; sourceTree = "<group>"; };
 		824343301DAA170300E841FD /* Muti-Thread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muti-Thread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		824343341DAA170300E841FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		824343361DAA170300E841FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82027E311DB867CB0008AD6D /* TestPatchAndThread */ = {
+			isa = PBXGroup;
+			children = (
+				82027E321DB8680F0008AD6D /* TestPatchAndThreadViewController.h */,
+				82027E331DB8680F0008AD6D /* TestPatchAndThreadViewController.m */,
+			);
+			name = TestPatchAndThread;
+			sourceTree = "<group>";
+		};
 		824343271DAA170300E841FD = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +135,7 @@
 				824343371DAA170300E841FD /* AppDelegate.m */,
 				824343391DAA170300E841FD /* ViewController.h */,
 				8243433A1DAA170300E841FD /* ViewController.m */,
+				82027E311DB867CB0008AD6D /* TestPatchAndThread */,
 				8246FF791DAA3D6E0032EDC2 /* GCD Load */,
 				8246FF7D1DAA40730032EDC2 /* Toast */,
 				8246FF721DAA304B0032EDC2 /* NSOperation */,
@@ -347,6 +360,7 @@
 				8246FF6D1DAA20DD0032EDC2 /* PthreadLoadViewController.m in Sources */,
 				824343381DAA170300E841FD /* AppDelegate.m in Sources */,
 				8246FF711DAA26AB0032EDC2 /* NSThreadLoadViewController.m in Sources */,
+				82027E341DB8680F0008AD6D /* TestPatchAndThreadViewController.m in Sources */,
 				824343351DAA170300E841FD /* main.m in Sources */,
 				8246FF7C1DAA3DA10032EDC2 /* GCDLoadViewController.m in Sources */,
 			);
