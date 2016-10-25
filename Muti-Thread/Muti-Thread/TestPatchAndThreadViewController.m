@@ -191,7 +191,7 @@
 
 -(void)blockedMainThread1 {
     //打印结果123  分析：mainQueue里存在任务1，，当执行dispatch_sync时，把同步线程任务2加入到全局队列，
-    //在主线程中一次执行主队列，全局队列的任务。
+    //在主线程中依次执行主队列，全局队列的任务。
     NSLog(@"1"); // 任务1
     dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"2"); // 任务2,同步线程任务
@@ -209,7 +209,7 @@
      */
     dispatch_queue_t queue = dispatch_queue_create("串行队列", DISPATCH_QUEUE_SERIAL);
     NSLog(@"1"); // 任务1
-    dispatch_async(queue, ^{//该队列里有任务3，需要执行完该队列所有任务才能执行任务3，死循环。串行队列中由于任务3不能执行，导致任务4不能执行。
+    dispatch_async(queue, ^{//该串行队列里有任务3，需要执行完该队列所有任务才能执行任务3，死循环。串行队列中由于任务3不能执行，导致任务4不能执行。
         NSLog(@"2 %@",[NSThread currentThread]); // 任务2
         
         dispatch_sync(queue, ^{
@@ -222,7 +222,7 @@
 
 -(void)blockedMainThread3
 {
-    //1,5,2,3,4 可以看出在全局队列里拿到住队列同步执行是没有问题的。
+    //1,5,2,3,4 可以看出在全局队列里拿到主队列同步执行是没有问题的。
     NSLog(@"1"); // 任务1
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"2"); // 任务2
