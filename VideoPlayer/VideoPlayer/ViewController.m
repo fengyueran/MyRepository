@@ -13,6 +13,7 @@
 
 @interface ViewController ()
 
+- (IBAction)play:(id)sender;
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerViewController *playerVC;
 @property (nonatomic, strong) MPMoviePlayerController *mpMovieplayer;
@@ -24,13 +25,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //1.AVPlayer,最简单的视频播放器
+
+
+//    //1.AVPlayer,最简单的视频播放器
 //    AVPlayer *player = self.player;
-    
+
      //2.AVPlayerViewController，有基本的播放控件
-    AVPlayerViewController *playerVC = self.playerVC;
-    playerVC.view.frame = CGRectMake(50, 50, 300, 350);
-    [self.view addSubview:playerVC.view];
+//    AVPlayerViewController *playerVC = self.playerVC;
+//    playerVC.view.frame = CGRectMake(50, 50, 300, 350);
+//    [self.view addSubview:playerVC.view];
 //     playerVC.player.externalPlaybackVideoGravity = AVLayerVideoGravityResizeAspectFill;//这个属性和图片填充试图的属性类似，也可以设置为自适应试图大小。
 
     //3.MPMoviePlayerController,已弃用
@@ -40,8 +43,19 @@
     // [self presentMoviePlayerViewControllerAnimated:self.mpMovieViewplayer];
     
 //    [player play];
+
     
-    
+}
+
+- (IBAction)play:(id)sender {
+    NSString *url = @"http://120.25.226.186:32812/resources/videos/minion_01.mp4";
+    AVURLAsset *videoURLAsset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:url] options:nil];
+    AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:videoURLAsset];
+    AVPlayer *player = [AVPlayer playerWithPlayerItem:item];
+    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:player];
+    layer.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-44);
+    [self.view.layer addSublayer:layer];
+    [player play];
 }
 
 - (AVPlayer *)player {
